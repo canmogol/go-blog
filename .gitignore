@@ -2,6 +2,9 @@
 # Project Specific
 ######################
 
+# folder name(s)
+godi
+go-blog
 
 # Binaries for programs and plugins
 *.exe

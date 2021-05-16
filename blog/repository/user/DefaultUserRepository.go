@@ -9,8 +9,8 @@ func newUserRepository() UserRepository {
 	return &userRepository{}
 }
 
-func (repository *userRepository) FindAll() []UserEntity {
-	return []UserEntity{
+func (repository *userRepository) findAll() []*UserEntity {
+	return []*UserEntity{
 		{
 			username: "user123",
 			password: "pass123",
@@ -19,7 +19,7 @@ func (repository *userRepository) FindAll() []UserEntity {
 }
 
 func (repository *userRepository) FindUserWithUsernameAndPassword(username string, password string) (*UserEntity, error) {
-	for _, user := range repository.FindAll() {
+	for _, user := range repository.findAll() {
 		if user.username == username && user.password == password {
 			return &UserEntity{
 				username: username,
