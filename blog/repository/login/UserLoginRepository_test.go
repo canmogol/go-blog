@@ -13,8 +13,8 @@ func (mock *userRepositorySuccess) FindUserWithUsernameAndPassword(username stri
 	return &repositoryUser.UserEntity{}, nil
 }
 
-func (mock *userRepositorySuccess) FindAll() []repositoryUser.UserEntity {
-	return []repositoryUser.UserEntity{}
+func (mock *userRepositorySuccess) FindAll() []*repositoryUser.UserEntity {
+	return []*repositoryUser.UserEntity{}
 }
 
 type userRepositoryError struct{}
@@ -23,8 +23,8 @@ func (mock *userRepositoryError) FindUserWithUsernameAndPassword(username string
 	return nil, fmt.Errorf("No User Found")
 }
 
-func (mock *userRepositoryError) FindAll() []repositoryUser.UserEntity {
-	return []repositoryUser.UserEntity{}
+func (mock *userRepositoryError) FindAll() []*repositoryUser.UserEntity {
+	return []*repositoryUser.UserEntity{}
 }
 
 func TestLogin_ForUserLoginRepository(t *testing.T) {
