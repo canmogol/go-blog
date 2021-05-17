@@ -6,7 +6,7 @@ import (
 	repositoryLogin "github.com/canmogol/godi/blog/repository/login"
 )
 
-func CreateLoginRepository(serviceType string, loginRepository repositoryLogin.LoginRepository) (LoginService, error) {
+func CreateLoginService(serviceType string, loginRepository repositoryLogin.LoginRepository) (LoginService, error) {
 	if serviceType == "default" {
 		return newDefaultLoginService(loginRepository), nil
 	}

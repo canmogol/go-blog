@@ -29,7 +29,7 @@ func (app *BlogApplication) build() {
 	if err != nil {
 		panic(err)
 	}
-	loginService, err := serviceLogin.CreateLoginRepository("default", loginRepository)
+	loginService, err := serviceLogin.CreateLoginService("default", loginRepository)
 	if err != nil {
 		panic(err)
 	}
