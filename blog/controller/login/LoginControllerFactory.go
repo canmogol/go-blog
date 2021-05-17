@@ -8,7 +8,7 @@ import (
 
 func CreateLoginController(serviceType string, loginService serviceLogin.LoginService) (LoginController, error) {
 	if serviceType == "default" {
-		return newDefaultLoginController(loginService), nil
+		return newHttpLoginController(loginService), nil
 	}
 	return nil, fmt.Errorf("Could not create LoginController, unknown controller type passed: '%s'", serviceType)
 }
