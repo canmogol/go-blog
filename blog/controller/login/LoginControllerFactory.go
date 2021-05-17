@@ -6,9 +6,9 @@ import (
 	serviceLogin "github.com/canmogol/godi/blog/service/login"
 )
 
-func CreateLoginController(serviceType string, loginService serviceLogin.LoginService) (LoginController, error) {
-	if serviceType == "default" {
+func CreateLoginController(controllerType string, loginService serviceLogin.LoginService) (LoginController, error) {
+	if controllerType == "default" {
 		return newHttpLoginController(loginService), nil
 	}
-	return nil, fmt.Errorf("Could not create LoginController, unknown controller type passed: '%s'", serviceType)
+	return nil, fmt.Errorf("Could not create LoginController, unknown controller type passed: '%s'", controllerType)
 }
