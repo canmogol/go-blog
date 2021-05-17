@@ -2,6 +2,7 @@ package main
 
 import (
 	blog "github.com/canmogol/godi/blog"
+	login "github.com/canmogol/godi/blog/controller/login"
 	"github.com/labstack/echo/v4"
 )
 
@@ -10,9 +11,12 @@ func main() {
 	e := echo.New()
 
 	e.POST("/login", func(c echo.Context) error {
-		username := c.FormValue("username")
-		password := c.FormValue("password")
-		loginRequest := blogApp.LoginController.CreateLoginRequest(username, password)
+		u := c.FormValue("username")
+		p := c.FormValue("password")
+		loginRequest := &login.LoginRequest{
+			Username: u,
+			Password: p,
+		}
 		loginResponse := blogApp.LoginController.Login(loginRequest)
 		return c.String(loginResponse.StatusCode, loginResponse.Message)
 	})
