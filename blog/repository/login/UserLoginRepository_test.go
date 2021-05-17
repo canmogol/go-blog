@@ -27,7 +27,7 @@ func (mock *userRepositoryError) FindAll() []*repositoryUser.UserEntity {
 	return []*repositoryUser.UserEntity{}
 }
 
-func TestLogin_ForUserLoginRepository(t *testing.T) {
+func TestLogin_UserLoginRepository(t *testing.T) {
 	userRepositoryError := &userRepositoryError{}
 	loginRepositoryUserError := newUserLoginRepository(userRepositoryError)
 	loggedFalse := loginRepositoryUserError.Login("", "")

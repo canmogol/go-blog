@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestLogin(t *testing.T) {
+func TestLogin_DefaultLoginRepository(t *testing.T) {
 	loginRepositoryDefault := newDefaultLoginRepository()
 	loggedEmpty := loginRepositoryDefault.Login("", "")
 	if loggedEmpty == false {
