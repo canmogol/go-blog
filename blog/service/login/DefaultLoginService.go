@@ -17,7 +17,7 @@ func newDefaultLoginService(loginRepository repositoryLogin.LoginRepository) Log
 }
 
 func (service *defaultLoginService) Login(username string, password string) (bool, error) {
-	if username == "" && password == "" {
+	if username == "" || password == "" {
 		return false, fmt.Errorf("username and/or password cannot be empty.")
 	}
 	return service.loginRepository.Login(username, password), nil
